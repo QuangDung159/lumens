@@ -13,6 +13,9 @@ const Tab = createBottomTabNavigator();
 export default function HomeScreen() {
   return (
     <Tab.Navigator
+      screenOptions={{
+        headerShown: false
+      }}
       tabBar={props => <TabBar {...props} />}>
       <Tab.Screen name={TAB_HOME} component={TabHome} />
       <Tab.Screen name={TAB_NOTIFICATION} component={TabNotification} />
