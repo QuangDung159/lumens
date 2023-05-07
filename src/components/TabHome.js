@@ -1,18 +1,17 @@
 import React from 'react';
-import { Image, SafeAreaView, ScrollView, StatusBar, Text, View } from 'react-native';
-import { ImageAssets } from '../assets';
-import { COLORS, DISTANCE, FONT_FAMILY } from '../constants/themes';
+import { FlatList, Image, ScrollView, Text, View, Dimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { ImageAssets } from '../assets';
+import { dummy } from '../constants/dummy';
+import { COLORS, DISTANCE, FONT_FAMILY } from '../constants/themes';
+import AvailableCoinBalance from './AvailableCoinBalance';
 
 export default function TabHome() {
   const insets = useSafeAreaInsets();
   const statusBarHeight = insets.top;
 
   return (
-    <ScrollView
-      style={{
-
-      }}>
+    <ScrollView>
       <View style={{
         backgroundColor: COLORS.background,
       }}>
@@ -23,12 +22,13 @@ export default function TabHome() {
           }}>
           <View
             style={{
-              marginHorizontal: DISTANCE.contentPadding
+              marginHorizontal: DISTANCE.contentPadding,
+              marginBottom: DISTANCE.distance40,
             }}>
             <View
               style={{
-                width: 40,
-                height: 40,
+                width: DISTANCE.distance40,
+                height: DISTANCE.distance40,
                 backgroundColor: COLORS.white,
                 marginTop: statusBarHeight + DISTANCE.contentPadding,
                 borderRadius: 20,
@@ -57,6 +57,30 @@ export default function TabHome() {
                 lineHeight: 24,
               }}>In Silver Tier, every $1 in rental fee paid, you get 2 coins to redeem exclusive rewards.
             </Text>
+          </View>
+          <AvailableCoinBalance />
+          <View>
+            <Text
+              style={{
+                marginHorizontal: DISTANCE.contentPadding,
+                marginVertical: DISTANCE.contentPadding,
+                lineHeight: 24,
+                fontSize: 18,
+                fontFamily: FONT_FAMILY.BOLD,
+                color: COLORS.grey01,
+              }}>Petrol</Text>
+            <View>
+              <FlatList
+                horizontal
+                data={dummy}
+                renderItem={({ item, index }) => {
+                  console.log('item :>> ', item);
+                  return (
+                    <Text key={item.id}>{item.title}</Text>
+                  )
+                }}
+              />
+            </View>
           </View>
         </View>
       </View>
