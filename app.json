@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "lumens",
+    "slug": "lumens",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "lumens"
+}
