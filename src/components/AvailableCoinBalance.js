@@ -10,6 +10,7 @@ export default function AvailableCoinBalance() {
         marginHorizontal: DISTANCE.distance16,
         borderRadius: 8,
         backgroundColor: COLORS.white,
+        marginBottom: DISTANCE.contentPadding,
       }}>
       <ImageBackground source={ImageAssets.coinBalanceBackground} resizeMode="cover"
         style={{

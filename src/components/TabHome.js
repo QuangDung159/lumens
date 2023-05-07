@@ -1,10 +1,11 @@
 import React from 'react';
-import { FlatList, Image, ScrollView, Text, View, Dimensions } from 'react-native';
+import { Image, ScrollView, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ImageAssets } from '../assets';
-import { dummy } from '../constants/dummy';
+import { dummy, dummyFoodAndBeverage, dummyRentalRebate } from '../constants/dummy';
 import { COLORS, DISTANCE, FONT_FAMILY } from '../constants/themes';
 import AvailableCoinBalance from './AvailableCoinBalance';
+import HorizontalList from './HorizontalList';
 
 export default function TabHome() {
   const insets = useSafeAreaInsets();
@@ -62,28 +63,9 @@ export default function TabHome() {
           marginTop: -(428 - 252)
         }}>
         <AvailableCoinBalance />
-        <View>
-          <Text
-            style={{
-              marginHorizontal: DISTANCE.contentPadding,
-              marginVertical: DISTANCE.contentPadding,
-              lineHeight: 24,
-              fontSize: 18,
-              fontFamily: FONT_FAMILY.BOLD,
-              color: COLORS.grey01,
-            }}>Petrol</Text>
-          <View>
-            <FlatList
-              horizontal
-              data={dummy}
-              renderItem={({ item, index }) => {
-                return (
-                  <Text key={item.id}>{item.title}</Text>
-                )
-              }}
-            />
-          </View>
-        </View>
+        <HorizontalList title='Petrol' list={dummy} />
+        <HorizontalList title='Rental Rebate' list={dummyRentalRebate} />
+        <HorizontalList title='Food and Beverage' list={dummyFoodAndBeverage} />
       </View>
     </ScrollView>
   )

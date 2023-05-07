@@ -54,13 +54,23 @@ export default function TabBar({ state, descriptors, navigation }) {
             style={{ flex: 1, height: 96, alignItems: 'center', justifyContent: 'center' }}
             key={route.key}
           >
-            <View>
-              <Image style={{
-                height: 40,
-                width: 40,
-                tintColor: isFocused ? COLORS.blueDark : COLORS.grey06
-              }} source={renderTabIcon(route.name)}></Image>
-            </View>
+            <Image style={{
+              height: 40,
+              width: 40,
+              tintColor: isFocused ? COLORS.blueDark : COLORS.grey06
+            }} source={renderTabIcon(route.name)} />
+            {route.name === TAB_NOTIFICATION && (
+              <View
+                style={{
+                  width: 12,
+                  height: 12,
+                  backgroundColor: COLORS.redDark,
+                  borderRadius: 6,
+                  position: 'absolute',
+                  top: 30,
+                  right: 36,
+                }} />
+            )}
           </TouchableOpacity>
         );
       })}

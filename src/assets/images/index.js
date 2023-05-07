@@ -10,4 +10,6 @@ export default {
   coinBalanceBackground: require('./coin_balance_background.png'),
   itemImage1: require('./item_image_1.png'),
   itemImage2: require('./item_image_2.png'),
+  itemImage3: require('./item_image_3.png'),
+  insufficientIcon: require('./insufficient_icon.png'),
 }
