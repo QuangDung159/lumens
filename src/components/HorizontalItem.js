@@ -1,7 +1,8 @@
-import { View, Text, Image } from 'react-native'
 import React from 'react'
-import { COLORS, DISTANCE, FONT_FAMILY } from '../constants/themes'
+import { Image, View } from 'react-native'
 import { ImageAssets } from '../assets'
+import { COLORS, DISTANCE, FONT_FAMILY } from '../constants/themes'
+import CustomText from './common/CustomText'
 
 export default function HorizontalItem({ item }) {
   return (
@@ -43,35 +44,29 @@ export default function HorizontalItem({ item }) {
                 marginRight: 4,
               }} />
           )}
-          <Text
+          <CustomText
             style={{
-              lineHeight: 24,
               color: item.isInsufficient ? COLORS.grey03 : COLORS.blueDark,
-              fontSize: 16,
               fontFamily: FONT_FAMILY.BOLD,
             }}>{item.title}
-          </Text>
+          </CustomText>
         </View>
-        <Text
+        <CustomText
           numberOfLines={3}
           style={{
-            lineHeight: 24,
             color: COLORS.grey04,
-            fontSize: 16,
-            fontFamily: FONT_FAMILY.REGULAR,
             marginBottom: item.isInsufficient ? 8 : 20,
           }}>{item.content}
-        </Text>
+        </CustomText>
         {item.isInsufficient && (
-          <Text
+          <CustomText
             style={{
               lineHeight: 20,
               color: COLORS.blueDark,
               fontSize: 14,
-              fontFamily: FONT_FAMILY.REGULAR,
               marginBottom: 16,
             }}>Insufficient coins
-          </Text>
+          </CustomText>
         )}
       </View>
     </View>

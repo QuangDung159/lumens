@@ -1,30 +1,27 @@
-import { View, Text, FlatList, Image } from 'react-native'
 import React from 'react'
-import { dummy } from '../constants/dummy'
+import { FlatList, View } from 'react-native'
 import { COLORS, DISTANCE, FONT_FAMILY } from '../constants/themes'
-import { ImageAssets } from '../assets'
 import HorizontalItem from './HorizontalItem'
+import CustomText from './common/CustomText'
 
 export default function HorizontalList({ title, list }) {
   return (
     <View>
-      <Text
+      <CustomText
         style={{
           marginHorizontal: DISTANCE.contentPadding,
           marginBottom: DISTANCE.contentPadding,
-          lineHeight: 24,
           fontSize: 18,
           fontFamily: FONT_FAMILY.BOLD,
           color: COLORS.grey01,
-        }}>{title}</Text>
+        }}>{title}
+      </CustomText>
       <FlatList
         showsHorizontalScrollIndicator={false}
         horizontal
         data={list}
         renderItem={({ item }) => {
-          return (
-            <HorizontalItem item={item} />
-          )
+          return <HorizontalItem item={item} />
         }}
       />
     </View>

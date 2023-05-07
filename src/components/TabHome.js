@@ -1,11 +1,12 @@
 import React from 'react';
-import { Image, ScrollView, Text, View } from 'react-native';
+import { Image, ScrollView, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ImageAssets } from '../assets';
 import { dummy, dummyFoodAndBeverage, dummyRentalRebate } from '../constants/dummy';
 import { COLORS, DISTANCE, FONT_FAMILY } from '../constants/themes';
 import AvailableCoinBalance from './AvailableCoinBalance';
 import HorizontalList from './HorizontalList';
+import CustomText from './common/CustomText';
 
 export default function TabHome() {
   const insets = useSafeAreaInsets();
@@ -40,22 +41,16 @@ export default function TabHome() {
               height: 12,
             }}></Image>
           </View>
-          <Text
+          <CustomText
             style={{
               color: COLORS.white,
               fontSize: 32,
               fontFamily: FONT_FAMILY.BOLD,
               marginBottom: DISTANCE.distance8,
+              lineHeight: 40,
             }}>Silver Tier
-          </Text>
-          <Text
-            style={{
-              color: COLORS.grey05,
-              fontSize: 16,
-              fontFamily: FONT_FAMILY.REGULAR,
-              lineHeight: 24,
-            }}>In Silver Tier, every $1 in rental fee paid, you get 2 coins to redeem exclusive rewards.
-          </Text>
+          </CustomText>
+          <CustomText>In Silver Tier, every $1 in rental fee paid, you get 2 coins to redeem exclusive rewards.</CustomText>
         </View>
       </View>
       <View

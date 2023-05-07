@@ -1,6 +1,6 @@
-import { View, Text, TouchableOpacity, Image } from 'react-native';
-import { TAB_HOME, TAB_NOTIFICATION, TAB_PAYMENT } from '../constants/common';
+import { Image, TouchableOpacity, View } from 'react-native';
 import { ImageAssets } from '../assets';
+import { TAB_HOME, TAB_NOTIFICATION, TAB_PAYMENT } from '../constants/common';
 import { COLORS } from '../constants/themes';
 
 export default function TabBar({ state, descriptors, navigation }) {
@@ -21,7 +21,6 @@ export default function TabBar({ state, descriptors, navigation }) {
     <View style={{ flexDirection: 'row' }}>
       {state.routes.map((route, index) => {
         const { options } = descriptors[route.key];
-
         const isFocused = state.index === index;
 
         const onPress = () => {
