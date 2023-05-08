@@ -4,11 +4,12 @@ import { ImageAssets } from '../assets'
 import { COLORS, DISTANCE, FONT_FAMILY } from '../constants/themes'
 import CustomText from './common/CustomText'
 
-export default function HorizontalItem({ item }) {
+export default function HorizontalItem({ item, isLast }) {
   return (
     <View
       style={{
         marginLeft: DISTANCE.contentPadding,
+        marginRight: isLast ? DISTANCE.contentPadding : 0,
         backgroundColor: COLORS.white,
         justifyContent: 'flex-start',
         width: 200,

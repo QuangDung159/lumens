@@ -20,8 +20,12 @@ export default function HorizontalList({ title, list }) {
         showsHorizontalScrollIndicator={false}
         horizontal
         data={list}
-        renderItem={({ item }) => {
-          return <HorizontalItem item={item} />
+        renderItem={({ item, index }) => {
+          return (
+            <HorizontalItem
+              item={item}
+              isLast={index === list.length - 1} />
+          )
         }}
       />
     </View>
