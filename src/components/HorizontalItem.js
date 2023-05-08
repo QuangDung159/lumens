@@ -1,13 +1,13 @@
 import React from 'react'
 import { Image, View } from 'react-native'
 import { ImageAssets } from '../assets'
-import { COLORS, DISTANCE, FONT_FAMILY } from '../constants/themes'
+import { COLORS, DISTANCE, FONT_FAMILY, SHADOW } from '../constants/themes'
 import CustomText from './common/CustomText'
 
 export default function HorizontalItem({ item, isLast }) {
   return (
     <View
-      style={{
+      style={[{
         marginLeft: DISTANCE.contentPadding,
         marginRight: isLast ? DISTANCE.contentPadding : 0,
         backgroundColor: COLORS.white,
@@ -18,7 +18,9 @@ export default function HorizontalItem({ item, isLast }) {
         borderWidth: 1,
         marginBottom: 48,
         minHeight: 240,
-      }}>
+      },
+        SHADOW,
+      ]}>
       <Image source={item.image} style={{
         width: 200,
         height: 98,

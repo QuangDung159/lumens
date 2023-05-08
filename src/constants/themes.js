@@ -24,3 +24,10 @@ export const FONT_FAMILY = {
     BOLD: 'Hellix-Medium',
     REGULAR: 'Hellix-Regular',
 };
+
+export const SHADOW = {
+    shadowColor: COLORS.grey05,
+    shadowOffset: { width: -2, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 6,
+}
