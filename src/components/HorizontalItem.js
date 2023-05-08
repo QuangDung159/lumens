@@ -14,8 +14,6 @@ export default function HorizontalItem({ item, isLast }) {
         justifyContent: 'flex-start',
         width: 200,
         borderRadius: 1,
-        borderColor: COLORS.grey08,
-        borderWidth: 1,
         marginBottom: 48,
         minHeight: 240,
       },
@@ -23,7 +21,7 @@ export default function HorizontalItem({ item, isLast }) {
       ]}>
       <Image source={item.image} style={{
         width: 200,
-        height: 98,
+        height: 99,
         borderTopLeftRadius: 1,
         borderTopRightRadius: 1,
         marginBottom: DISTANCE.distance16,
